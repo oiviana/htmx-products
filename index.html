@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto HTMX</title>
-    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+    <meta name="htmx-config" content='{"selfRequestsOnly": false}' />
+    <link rel="stylesheet" href="/public/styles.css">
+    <title>HTMX Products</title>
+    
 </head>
-<body>
-    <h1>HTMX + Prisma</h1>
-    
 
-    <button hx-get="/test-rout" hx-target="#result" hx-swap="innerHTML">
-        Fazer requisição GET
-    </button>
+<body>
+    <header>
+        <nav>
+            <a href="/views/costumers/list-all.html" hx-target="#content" hx-swap="innerHTML">Clientes</a>
+            <a href="/views/produtos/list.html" hx-target="#content" hx-swap="innerHTML">Produtos</a>
+            <a href="/views/pedidos/list.html" hx-target="#content" hx-swap="innerHTML">Pedidos</a>
+        </nav>
+    </header>
+
     
+    <main id="content">
+        <h1>Bem-vindo ao Sistema!</h1>
+        <p>Escolha uma opção no menu acima.</p>
+    </main>
+    <button hx-get="http://localhost:3333/clients/find-client/cb255e98-c1e3-4755-a36e-34a40628c12f" hx-target="#result" hx-swap="innerHTML">
+        Fazer requisição GET af
+    </button>    
     <div id="result"></div>
 </body>
+<script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
 </html>

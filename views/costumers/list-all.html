@@ -1,0 +1,12 @@
+<!-- /views/clientes/list.html -->
+<h2>Clientes</h2>
+<button hx-get="http://localhost:3333/clients/new" 
+        hx-target="#form" hx-swap="innerHTML">Cadastrar Novo Cliente</button>
+
+<ul id="lista-clientes" hx-get="http://localhost:3333/clients/list-all" hx-trigger="load" hx-swap="innerHTML">
+
+</ul>
+
+<div id="form">
+
+</div>
